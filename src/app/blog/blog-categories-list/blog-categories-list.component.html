@@ -1,0 +1,5 @@
+<div class="d-flex flex-row flex-wrap gap-1 align-items-center justify-content-center" style="width: 100%">
+ <div *ngFor="let category of categories">
+  <a href="#" (click)="openCategory(category.title, $event)"><img *ngIf="category.imgurl != ''" [src]="category.imgurl" style="height: 125px"></a>
+ </div>
+</div>

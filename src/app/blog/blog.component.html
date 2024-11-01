@@ -1,0 +1,18 @@
+<div class="container d-flex flex-column justify-content-top align-items-center mt-3">
+ <div class="d-flex flex-row w-100">
+  <h1 class="flex-grow-1 align-items-start"><a href="/">{{ blog?.title }}</a></h1>
+  <app-blog-searchbox></app-blog-searchbox>
+ </div>
+ <app-blog-categories-list></app-blog-categories-list>
+ <hr class="horz-div w-100">
+ <div class="container">
+  <div *ngIf="posts && posts.length" class="row">
+   <div class="col-md-6" *ngFor="let post of posts; let i = index">
+    <app-blog-post-short [post]="post" *ngIf="i < paginatorService.pageStart + paginatorService.pageSize && i >= paginatorService.pageStart"></app-blog-post-short>
+   </div>
+  </div>
+  <div class="row w-100">
+   <app-blog-paginator></app-blog-paginator>
+  </div>
+ </div>
+</div>

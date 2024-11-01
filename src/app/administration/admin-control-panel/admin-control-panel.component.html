@@ -1,0 +1,25 @@
+<div class="fullscreen m-0 p-0">
+ <div class="row h-100 m-0 p-0 w-100">
+  <div class="col-2 d-flex flex-column align-items-center menu bg-light m-0">
+   <a href="#" (click)="back($event)" *ngIf="displayedComponentService.displayedComponent != 0" class="p-2 mt-5"><h4 class="m-0">Administracija</h4></a>
+   <h4 class="p-2 mt-5 mb-0" *ngIf="displayedComponentService.displayedComponent == 0">Administracija</h4>
+   <hr class="w-100">
+   <div class="d-flex flex-column align-iterms-start p-2 w-100 position-relative">
+    <a href="#" class="p-2" (click)="openOpus($event)" [ngClass]="{ 'active-link': displayedComponentService.displayedComponent == 1 }">Opus</a>
+    <a href="#" class="p-2" (click)="openMedia($event)" [ngClass]="{ 'active-link': displayedComponentService.displayedComponent == 5 }">Mediji i dokumenti</a>
+    <a href="#" class="p-2" (click)="openBooks($event)" [ngClass]="{ 'active-link': displayedComponentService.displayedComponent == 2 }">Knjige i rukopisi</a>
+    <a href="#" class="p-2" (click)="openBlog($event)" [ngClass]="{ 'active-link': displayedComponentService.displayedComponent == 3 }">Blog</a>
+   </div>
+   <hr class="w-100">
+   <h4 class="p-2 mt-2">Korisničke postavke</h4>
+   <hr class="w-100">
+   <div class="d-flex flex-column align-iterms-start p-2 w-100 flex-grow-1 position-relative">
+    <a href="#" class="p-2" (click)="openPass($event)" [ngClass]="{ 'active-link': displayedComponentService.displayedComponent == 4 }">Promjena lozinke</a>
+    <a href="#" class="p-2" (click)="logout($event)">Odjava</a>
+   </div>
+  </div>
+  <div class="col-9 m-0 p-0">
+   <router-outlet></router-outlet>
+  </div>
+ </div>
+</div>

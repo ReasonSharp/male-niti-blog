@@ -1,12 +1,10 @@
 {
-  "name": "nakeddiaries",
+  "name": "blog-name",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "dev": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development && ng serve --host=0.0.0.0 --disable-host-check",
+    "prod": "envsubst '${PROJECT_NAME}' < ./src/environment.sample.txt > ./src/environment.prod.ts && ng build --configuration production && ng serve",
+    "build:prod": "envsubst '${PROJECT_NAME}' < ./src/environment.sample.txt > ./src/environment.prod.ts && ng build --configuration production",
   },
   "private": true,
   "dependencies": {

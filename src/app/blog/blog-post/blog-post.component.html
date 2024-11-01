@@ -1,0 +1,19 @@
+<div class="container mt-5">
+ <div class="row mb-3">
+  <div class="col-md-8 d-flex flex-column">
+   <div class="d-flex flex-row w-100">
+    <a href="/">Naslovnica</a>&nbsp;&sc;&nbsp;<a href="/blog">Blog</a>
+   </div>
+   <h1>{{ post?.title }}</h1>
+   <p>
+    autor: {{ post?.author }} |
+    {{ getDate(post?.date) }} |
+    <span *ngFor="let category of post?.categories; let i = index" class="p-0 m-0">
+     <a href="#" (click)="openCategory(category, $event)" [ngClass]="{ 'me-1': i < (post?.categories?.length ?? 0) - 1 }">{{ category }}</a>
+    </span>
+   </p>
+   <img [src]="post?.imgurl">
+   <span [innerHTML]="post?.body"></span>
+  </div>
+ </div>
+</div>

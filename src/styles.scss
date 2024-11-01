@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+$body-bg: #111111;
+$body-color: #acacac;
+$link-color: #FF6500;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+a {
+ text-decoration: none;
+}
+a:hover {
+ color: #ca7a3a;
+}
+hr {
+ color: #481E14;
+ border-width: 5px;
+ border-radius: 3px;
+}

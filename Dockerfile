@@ -4,7 +4,8 @@ COPY package*.json /app/
 RUN npm ci
 COPY ./angular.json ./tsconfig* .
 COPY ./src ./src
-RUN npm run build
+ENV PROJECT_NAME
+RUN npm run build:${ENV}
 
 FROM nginx:1.25.2
 COPY --from=build /app/dist/* /usr/share/nginx/html

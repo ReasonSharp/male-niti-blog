@@ -1,0 +1,27 @@
+.even {
+ background-color: #e0e0e0 !important;
+ border-radius: 5px;
+ transition: background-color 150ms ease-in-out;
+}
+.even:hover {
+ background-color: #d0d0d0 !important;
+}
+.item-row {
+ background-color: white;
+ border-radius: 5px;
+ transition: background-color 150ms ease-in-out;
+}
+.item-row:hover {
+ background-color: #eeeeee;
+}
+
+.big-icon {
+ font-size: 4em;
+}
+
+.success {
+ color: green;
+}
+.error {
+ color: red;
+}

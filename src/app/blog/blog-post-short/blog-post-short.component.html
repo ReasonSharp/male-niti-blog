@@ -1,0 +1,9 @@
+<div *ngIf="post" class="d-flex flex-column w-100 gap-2 justify-content-center align-items-justify short-post p-3" (click)="openPost($event)">
+ <img [src]="post.imgurl" style="width: 100%;">
+ <h2>{{ post.title }}</h2>
+ <span [innerHTML]="formatBody()"></span>
+ <div class="d-flex flex-row w-100 justify-content-left align-items-start gap-2" *ngIf="post?.categories && post?.categories?.length">
+  <i class="fa-solid fa-folder-tree p-0 m-0"></i> 
+  <p *ngFor="let category of post?.categories" class="p-0 m-0"><a href="#" (click)="openCategory(category, $event)">{{ category }}</a></p>
+ </div>
+</div>
