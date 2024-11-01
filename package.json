@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development && ng serve --host=0.0.0.0 --disable-host-check",
-    "prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.prod.ts && ng build --configuration production && ng serve",
-    "build:prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.prod.ts && ng build --configuration production"
+    "prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production && ng serve",
+    "build:prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production"
   },
   "private": true,
   "dependencies": {
