@@ -2,9 +2,9 @@
   "name": "blog-name",
   "version": "0.0.0",
   "scripts": {
-    "dev": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development && ng serve --host=0.0.0.0 --disable-host-check",
-    "prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production && ng serve",
-    "build:prod": "envsubst '${PROJECT_NAME}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production"
+    "dev": "PROD=false envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development && ng serve --host=0.0.0.0 --disable-host-check",
+    "prod": "PROD=true envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production && ng serve",
+    "build:prod": "PROD=true envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production"
   },
   "private": true,
   "dependencies": {
