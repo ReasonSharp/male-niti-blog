@@ -1,10 +1,10 @@
 FROM node:22.9.0-alpine3.20 AS build
 WORKDIR /app
 COPY package*.json /app/
-RUN npm ci
+RUN apk add envsubst && npm ci
 COPY ./angular.json ./tsconfig* .
 COPY ./src ./src
-ARG PROJECT_NAME
+ARG PROJECT_NAME ENV
 ENV PROJECT_NAME=${PROJECT_NAME}
 RUN npm run build:${ENV}
 
