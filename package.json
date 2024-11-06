@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "PROD=false envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development && ng serve --host=0.0.0.0 --disable-host-check",
     "prod": "PROD=true envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production && ng serve",
-    "build:prod": "PROD=true envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production"
+    "build:prod": "PROD=true envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration production",
+    "build:dev": "PROD=false envsubst '${PROJECT_NAME},${PROD}' < ./src/environments/environment.sample.txt > ./src/environments/environment.ts && ng build --configuration development"
   },
   "private": true,
   "dependencies": {
